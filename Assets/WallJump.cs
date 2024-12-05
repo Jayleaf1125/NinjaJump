@@ -28,7 +28,7 @@ public class WallJump : MonoBehaviour
             }
 
             // Ensure the character continues to ascend
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, jumpForce));
+            // rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, jumpForce));
         }
 
         private void SwitchWall()

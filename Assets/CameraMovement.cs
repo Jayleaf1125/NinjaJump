@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float jumpForce = 2.5f;
+    public float verticalForce = 2.5f;
     public float gravityScale = 2f;
     private Rigidbody2D rb;
 
@@ -14,11 +14,11 @@ public class CameraMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravityScale;
-    }
+    }   
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, jumpForce));
+        rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, verticalForce));
     }
 }
