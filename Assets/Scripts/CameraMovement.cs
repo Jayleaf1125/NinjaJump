@@ -14,11 +14,17 @@ public class CameraMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravityScale;
-    }   
+    }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, verticalForce));
+        if (this.gameObject.activeSelf)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, verticalForce));
+        } else
+        {
+            // Destroy(this.gameObject);
+        }
     }
 }
