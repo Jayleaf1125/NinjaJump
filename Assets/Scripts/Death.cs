@@ -19,12 +19,20 @@ public class Death : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.collider.CompareTag("Spike"))
+        if(other.gameObject.tag == "Spike")
         {
             Debug.Log(10);
         }
         
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Spike")
+        {
+            Debug.Log(10);
+        }
     }
 
 }
